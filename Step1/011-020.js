@@ -147,8 +147,8 @@ const square = function (a) {
     console.log(parseInt(num1 ** num2));
 }
 
-const squared = prompt("a의 b승").split(' ');
-square(squared)
+//const squared = prompt("a의 b승").split(' ');
+//square(squared)
 
 // 답안
 //const n = prompt('수를 입력하세요.').split(' ');
