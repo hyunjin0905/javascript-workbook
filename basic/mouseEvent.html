@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: #ffacb0;
+        border: 5px solid orange;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+<div class="box">
+</div>
+<script>
+    const $box = document.querySelector(".box"); // 드래그 대상요소
+    let initMousePos = { x: 0, y: 0 } // 시작 시점의 포인터 위치
+    let offset = { x: 0, y: 0 }  // 이동 할 거리
+
+    const move = (e) => {
+        offset.x = e.clientX - initMousePos.x;
+        offset.y = e.clientY - initMousePos.y;
+        console.log("이동할거리: offset.x, offset.y", offset.x, offset.y);
+        $box.style.transform = `translate3d(${offset.x}px , ${offset.y}px, 0)`;
+    }
+
+    $box.addEventListener("mousedown", e => {
+       initMousePos.x = e.clientX - offset.x;
+       initMousePos.y = e.clientY - offset.y;
+       console.log("시작시점: initMousePos.x, initMousePos.y", initMousePos.x, initMousePos.y);
+        document.addEventListener("mousemove", move);
+    })
+
+    document.addEventListener("mouseup", e => {
+        document.removeEventListener("mousemove", move)
+    })
+
+</script>
+
+</body>
+</html>
