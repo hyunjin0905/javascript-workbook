@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<ul id="fruits">
+    <li id="apple">apple</li>
+    <li id="orange">orange</li>
+    <li id="banana">banana</li>
+</ul>
+<script>
+    const fruits = document.getElementById("fruits");
+    fruits.addEventListener("click", e => {
+        console.log(`이벤트 단계 : ${e.eventPhase}`)
+        console.log(`이벤트 타깃 : ${e.target}`)
+        console.log(`현재 타깃 : ${e.currentTarget}`)
+
+    }, true);
+    // 3번째 인수 : addEventListener 캡쳐링 단계 캐치 할수있음
+    // attribute / property 이벤트는 타깃 단계와, 버블링 단계 의 이벤트만 잡을 수 있다
+
+</script>
+</body>
+</html>
