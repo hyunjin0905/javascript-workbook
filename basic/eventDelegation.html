@@ -49,9 +49,9 @@
 </nav>
 <div>선택된 내비게이션 아이템 : <em class="msg">apple</em></div>
 <div class="container">
-    <button class="button1">button1</button>
-    <button class="button2">button2</button>
-    <button class="button3">button3</button>
+    <button class="button1" data-color="red">button1</button>
+    <button class="button2" data-color="blue">button2</button>
+    <button class="button3" data-color="green">button3</button>
 </div>
 <script>
 
@@ -80,13 +80,14 @@
 </script>
 <script>
     document.querySelector(".container").onclick = ({ target }) => {
-        if (!target.matches('.container > button')) return;
-        target.style.color = "red";
+        if (!target.matches('[data-color]')) return;
+        const { color } = target.dataset;
+        target.style.color = color;
     }
 
     document.querySelector('.button2').onclick = e => {
         e.stopPropagation();
-        e.target.style.color = "blue";
+        e.target.style.color = "yellow";
     }
 
 </script>
