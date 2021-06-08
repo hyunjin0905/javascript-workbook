@@ -16,7 +16,6 @@ for (let i = 0; i < 50; i++) {
         jobType: name.jobType()
     })
 }
-console.log(students);
 const map: StudentMap = {};
 students.forEach((student) => {
     const { jobType } = student;
@@ -61,9 +60,7 @@ bills.forEach((b) => {
         billMap[billDate] = [ b ];
     }
 })
-console.log(billMap);
 const billDates = Object.keys(billMap).sort().reverse();
-console.log(billDates);
 const today = new Date();
 const todayString = `${today.getFullYear()}-0${today.getMonth() + 1}-0${today.getDate()}`;
 billDates.map((date) => {
@@ -77,7 +74,8 @@ billDates.map((date) => {
 })
 
 
-
+////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
 interface CompanyInfo {
     name: string;
     date: string;
